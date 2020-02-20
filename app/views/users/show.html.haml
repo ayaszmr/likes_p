@@ -4,5 +4,10 @@
 - @user.posts.each do |post|
   %a{:href => "/posts/#{post.id}"}= post.content
   %hr/
+%h3 いいねしている投稿
+- @user.liked_posts.each do |post|
+  = post.user.email
+  = post.content
+
 = link_to "ユーザー一覧へ", users_path
 = link_to "ホームへ戻る", posts_path

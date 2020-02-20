@@ -12,6 +12,8 @@
     %a{:href => "/users/#{post.user.id}"}= post.user.email
     %p
       %a{:href => "/posts/#{post.id}"}= post.content
+      (#{post.liked_users.count})
+
 - else
   = link_to "ユーザー登録", new_user_registration_path
   = link_to "ログイン", new_user_session_path
